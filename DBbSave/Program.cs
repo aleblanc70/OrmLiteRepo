@@ -10,10 +10,11 @@ namespace DBbSave
 		static System.Data.IDbConnection db;
 		protected static void Main(string[] args)
         {
-		    dbFactory = new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider);
-            db = dbFactory.Open();     //Open ADO.NET DB Connection
+			dbFactory = new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider);
+			//dbFactory = new OrmLiteConnectionFactory("repro.sqlite", SqliteDialect.Provider);
+            db = dbFactory.Open();    
 			ResetSchema();
-
+            
 			var audit = new Audit();
 
             audit.Name = "FakeSync";
@@ -29,7 +30,7 @@ namespace DBbSave
             audit.Score = "60";
             audit.Benchmark = "FakeTest";
 
-
+            // This one only it work no exception
             var dietResult = new DietResult();
             dietResult.AccessFiber = 15;
             dietResult.MainFiber = 12;
@@ -38,19 +39,26 @@ namespace DBbSave
             dietResult.ValidCategory = true;
             audit.DietResult = dietResult;
 
+            // With this one included Concurrency Exception
             var manureResult = new ManureResult();
             manureResult.Medium = "5";
             manureResult.Pasty = "3";
             manureResult.Liquid = "0";
             audit.ManureResult = manureResult;
 
+			// With this one included When using SQLite = "SQLite Error 19: 'FOREIGN KEY constraint failed'."
+			// When run :memory: Concurrency Exception
+			var rumenFillResult = new RumenFillResult();
+            rumenFillResult.Normal = "10";
+            rumenFillResult.SlightlyEmpty = "1";
+            rumenFillResult.Bloated = "2";
+            audit.RumenFillResult = rumenFillResult;
+
+
 			db.Save(audit, true);
                  
    		}
-		/// <summary>
-        /// Resets the schema, and clear data from the database
-        /// Use with caution
-        /// </summary>
+
         public static void ResetSchema()
         {
             

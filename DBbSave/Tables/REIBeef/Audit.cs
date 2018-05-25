@@ -51,10 +51,10 @@ namespace LanBO.ServiceModel.Tables.REIBeef
 		//[Reference]
         //public FacilitiesResult FacilitiesResult { get; set; }
 
-		[References(typeof(CleanlinessResult))]
-		public long? CleanId { get; set; }
-		[Reference]
-        public CleanlinessResult CleanlinessResult { get; set; }
+		//[References(typeof(CleanlinessResult))]
+		//public long? CleanId { get; set; }
+		//[Reference]
+        //public CleanlinessResult CleanlinessResult { get; set; }
         
 		//[References(typeof(FeetInflamationResult))]
 		//public long? FeetId { get; set; }
@@ -66,20 +66,20 @@ namespace LanBO.ServiceModel.Tables.REIBeef
 		//[Reference]
         //public HornsInflamationResult HornsInflamationResult { get; set; }
 
-		[References(typeof(AnimalPerformanceResult))]
-		public long? ApId { get; set; }
-		[Reference]
-        public AnimalPerformanceResult AnimalPerformanceResult { get; set; }
+		//[References(typeof(AnimalPerformanceResult))]
+		//public long? ApId { get; set; }
+		//[Reference]
+        //public AnimalPerformanceResult AnimalPerformanceResult { get; set; }
 
 		//[References(typeof(TemperaturehumidityResult))]
 		//public long? TempId { get; set; }
 		//[Reference]
         //public TemperaturehumidityResult TemperaturehumidityResult { get; set; }
 
-		[References(typeof(BehaviourObservationsResult1))]
-		public long? Bo1Id { get; set; }
-		[Reference]
-        public BehaviourObservationsResult1 BehaviourObservationsResult1 { get; set; }
+		//[References(typeof(BehaviourObservationsResult1))]
+		//public long? Bo1Id { get; set; }
+		//[Reference]
+        //public BehaviourObservationsResult1 BehaviourObservationsResult1 { get; set; }
 
 //		[References(typeof(BehaviourObservationsResult2))]
 		//public long? Bo2Id { get; set; }

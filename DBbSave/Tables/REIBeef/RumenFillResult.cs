@@ -1,6 +1,4 @@
-﻿using System;
-using LanBO.ServiceModel.Interface.Tables;
-using ServiceStack.DataAnnotations;
+﻿using ServiceStack.DataAnnotations;
 
 namespace LanBO.ServiceModel.Tables.REIBeef
 {
