@@ -39,7 +39,7 @@ namespace DBbSave
             dietResult.ValidCategory = true;
             audit.DietResult = dietResult;
 
-            // With this one included Concurrency Exception
+			// With this one included 'ServiceStack.Data.OptimisticConcurrencyException'
             var manureResult = new ManureResult();
             manureResult.Medium = "5";
             manureResult.Pasty = "3";
@@ -47,13 +47,12 @@ namespace DBbSave
             audit.ManureResult = manureResult;
 
 			// With this one included When using SQLite = "SQLite Error 19: 'FOREIGN KEY constraint failed'."
-			// When run :memory: Concurrency Exception
+			// When run :memory: 'ServiceStack.Data.OptimisticConcurrencyException'
 			var rumenFillResult = new RumenFillResult();
             rumenFillResult.Normal = "10";
             rumenFillResult.SlightlyEmpty = "1";
             rumenFillResult.Bloated = "2";
             audit.RumenFillResult = rumenFillResult;
-
 
 			db.Save(audit, true);
                  
