@@ -8,7 +8,7 @@ namespace DBbSave
 
 		static OrmLiteConnectionFactory dbFactory;
 		static System.Data.IDbConnection db;
-		protected static void Main(string[] args)
+		protected static void Main()
 		{
 			dbFactory = new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider);
 			//dbFactory = new OrmLiteConnectionFactory("repro.sqlite", SqliteDialect.Provider);
@@ -60,8 +60,6 @@ namespace DBbSave
 
 		public static void ResetSchema()
 		{
-
-
 			db.DropAndCreateTable<ManureResult>();
 			db.DropAndCreateTable<DietResult>();
 			db.DropAndCreateTable<AnimalPerformanceResult>();
