@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBbSave", "DBbSave\DBbSave.csproj", "{9D896F59-50FC-4182-8383-2B28D8166994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSave", "DBbSave\DBSave.csproj", "{9D896F59-50FC-4182-8383-2B28D8166994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
